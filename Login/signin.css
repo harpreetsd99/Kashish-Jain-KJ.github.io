@@ -1,0 +1,86 @@
+body{
+background: #fafafa;
+width: 100% !important;
+overflow:hidden !important;
+box-sizing: border-box;
+}
+.main{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+}
+.form{
+position:fixed;
+top: 50%;
+left: 50%;
+width:34em;
+height:32em;
+margin-top: -16em;
+margin-left: -17em;
+border:1px solid #dadce0;
+padding:20px 50px 20px 50px;
+border-radius: 15px;
+background-color: #ffffff;
+}
+.title{
+font: sans-serif;
+font-size: 30px;
+padding-bottom: 30px;
+}
+.input-field label {
+color: #000;
+}
+.input-field input[type=text]:focus + label {
+color: #000;
+}
+.input-field input[type=text]:focus {
+border-bottom: 1px solid #000;
+box-shadow: 0 1px 0 0 #000;
+}
+.input-field input[type=text].valid {
+border-bottom: 1px solid #000;
+box-shadow: 0 1px 0 0 #000;
+}
+.input-field input[type=text].invalid {
+border-bottom: 1px solid #000;
+box-shadow: 0 1px 0 0 #000;
+}
+.input-field .prefix.active {
+color: #000;
+}
+
+@media only screen and (max-width: 600px) {
+body{
+background: #fff;
+}
+.form{
+position:fixed;
+top: 50%;
+left: 50%;
+width:34em;
+height:32em;
+margin-top: -16em;
+margin-left: -17em;
+border:1px solid #fff;
+}
+}
+@media screen and (max-width: 480px){
+body{
+background: #fff;
+}.form{
+position:fixed;
+top: 50%;
+left: 50%;
+width:30em;
+height:32em;
+margin-top: -16em;
+margin-left: -15em;
+border:1px solid #fff;
+}
+}
+
+#email-error {
+    color : red;
+    font-weight: bold;
+}

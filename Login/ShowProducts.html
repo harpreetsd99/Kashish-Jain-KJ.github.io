@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show Products</title>
+	
+</head>
+<body>
+    <div class="container" >
+        <label for="Product_Name">Product Name:</label> <p id = "Product_Name"></p>
+          
+            <br>
+         <label for="Product_Category">Product Category:</label> <p id = "Product_Category"></p>
+          
+            <br>
+          <label for="Product_Discription">Product Description:</label> <p id = "Product_Discription"></p>
+         
+          <br>
+    
+          <label for="Product_Quantity">Product Quantity:</label> <p id = "Product_Quantity"></p>
+          
+          <br>
+          <label for="Product_Unit">Product Unit:</label> <p id = "Product_Unit"></p>
+          
+          <br>
+          <label for="Product_Price">Product Price:</label> <p id = "Product_Price"></p>
+          
+          <br>
+    
+          <label for="img">Product Image:</label>
+      
+      <br>
+    
+      <label for="No_Of_CheckPoints">Number of CheckPoints:</label> <p id = "No_Of_CheckPoints"></p>
+         
+    
+          <br>
+    
+        <label for="CheckPoint_Quantity">CheckPoint_Quantity1:</label> <p id = "CheckPoint_Quantity1"></p>
+       
+        <label for="CheckPoint_Price">CheckPoint_Price1:</label> <p id = "CheckPoint_Price1"></p>
+       
+        <br>
+        <label for="CheckPoint_Quantity">CheckPoint_Quantity2:</label> <p id = "CheckPoint_Quantity2"></p>
+        
+        <label for="CheckPoint_Price">CheckPoint_Price2:</label> <p id = "CheckPoint_Price2"></p>
+        
+        <br>
+      
+        <input type="submit" value="Submit" onclick = "add()">
+       
+      
+          
+      
+      
+      </div>
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script>
+
+ <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+ <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+
+ <script>
+ // Your web app's Firebase configuration
+ var firebaseConfig = {
+     apiKey: "AIzaSyBNuyR1kYlUE47dRdvSwH_ktun0aJdmnIw",
+     authDomain: "codellion-project.firebaseapp.com",
+     databaseURL: "https://codellion-project.firebaseio.com",
+     projectId: "codellion-project",
+     storageBucket: "codellion-project.appspot.com",
+     messagingSenderId: "115691137424",
+     appId: "1:115691137424:web:6512ab76b92862f9302b15",
+     measurementId: "G-QDVW8S0KLN"
+ };
+ // Initialize Firebase
+ firebase.initializeApp(firebaseConfig);
+ firebase.analytics();
+ </script>
+ <script src="ShowProducts.js"></script>
+ 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+  
+</body>
+</html>
