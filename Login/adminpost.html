@@ -465,12 +465,45 @@
 									contentType: file.type
 								}
 								var uploadTask = storageRef.child('images/' + name).put(file, metadata);
+						// 		storageRef.child("images/" + dict[docum[i]]["Product_Img"]).getDownloadURL().then(function(url) {
+                        //         localStorage.setItem("url", url);   
+                        //     console.log(url);
+                        //    }).catch(function(error) {
+                           
+                        //    });
+						{ 
+         
+  
+     
+  
+          // all working for progress bar that in html 
+          // to indicate image uploading... report 
+          uploadTask.on('state_changed', function(snapshot){ 
+            var progress =  
+             (snapshot.bytesTransferred / snapshot.totalBytes) * 100; 
+            
+              switch (snapshot.state) { 
+                case firebase.storage.TaskState.PAUSED: 
+                  console.log('Upload is paused'); 
+                  break; 
+                case firebase.storage.TaskState.RUNNING: 
+                  console.log('Upload is running'); 
+                  break; 
+              } 
+          }, function(error) {console.log(error); 
+          }, function() { 
+  
+               // get the uploaded image url back 
+               uploadTask.snapshot.ref.getDownloadURL().then( 
+                function(downloadURL) { 
+  
+               // You get your url from here 
+                console.log('File available at', downloadURL); 
+  
+              // print the image url  
+               console.log(downloadURL); 
+			   var Pname = document.getElementById("product2").value;	
 								
-								
-								
-								
-								var Pname = document.getElementById("product2").value;	
-							
     							
 
 								db.collection("Products").doc(Pname).set({
@@ -491,7 +524,8 @@
 									CheckPointQuantity4: document.getElementById("qty-req-4").value,
 									CheckPointPrice4: document.getElementById("price-point-4").value,
 									CheckPointQuantity5: document.getElementById("qty-req-5").value,
-									CheckPointPrice5: document.getElementById("price-point-5").value
+									CheckPointPrice5: document.getElementById("price-point-5").value,
+									Product_URL: downloadURL
 
 
     							})
@@ -508,6 +542,14 @@
 								
 								});
 
+			});
+			 
+          }); 
+      };
+								
+								
+								
+								
 								
 								
 						
