@@ -1,0 +1,43 @@
+#navbar{
+display: flex;
+justify-content: space-between;
+}
+
+.input-field{
+display: flex;
+flex-grow: 4;
+}
+
+#search_form{
+  display: flex;
+  flex-grow: 4;
+}
+
+.responsive-img{
+  max-height: 300px; 
+  max-width: 300px;
+  text-align: center;
+}
+
+.checkpointbar{
+  margin:1%;
+}
+
+.container{
+  width: 90%;
+}
+
+.col{
+display: flex;
+padding: 1%;
+}
+
+.card-image{
+padding: 1%;
+max-width: 300px;
+max-height: 300px;
+}
+
+button{
+  margin : 5px;
+}
