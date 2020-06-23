@@ -99,12 +99,19 @@ db.collection("Products").get().then(function(querySnapshot) {
                                 var node6 = document.createTextNode(dict[docum[i]]["Product_Price"]);
                                 p6.appendChild(span6);
                                 p6.appendChild(node6);
+                            var a1 = document.createElement("a");
+                            a1.setAttribute("style","margin-top:100px;");
+                            a1.setAttribute("href","#");
+                                var at = document.createTextNode("View Buyers Details");
+                                
+                                a1.appendChild(at);
                         cardcontent.appendChild(p1);
                         cardcontent.appendChild(p2);
                         cardcontent.appendChild(p3);
                         cardcontent.appendChild(p4);
                         cardcontent.appendChild(p5);
                         cardcontent.appendChild(p6);
+                        cardcontent.appendChild(a1);
                     
                         var cardaction = document.createElement("div");
                         cardaction.setAttribute('class',"card-action");
