@@ -21,7 +21,7 @@
 
 
 
-	<title>View Products</title>
+	<title>All Products</title>
 </head>
 <body>
     <header>
@@ -37,21 +37,30 @@
                  </form>
 
                  <!-- Dropdown Button-->
-                 <a class='dropdown-trigger btn' href='#' data-target='dropdown1' style="margin: 10px">Filters</a>
+                 <a class='dropdown-trigger btn center' href='#' data-target='dropdown1' style="margin: 10px;">Filters</a>
                  
                  <!-- Dropdown Structure -->
                  <ul id='dropdown1' class='dropdown-content'>
                    <li class="filtercategory" id="all"><a href="#!">All</a></li>				  	
-                   <li class="filtercategory" id="vegetablesfilter"><a href="#!">Vegetables</a></li>
-                   <li class="filtercategory" id="fruitsfilter"><a href="#!">Fruits</a></li>
-                   <li class="filtercategory" id="otherfilter"><a href="#!">Other</a></li>
+                   <li class="filtercategory" id="vegetables"><a href="#!">Vegetables</a></li>
+                   <li class="filtercategory" id="fruits"><a href="#!">Fruits</a></li>
+                   <li class="filtercategory" id="others"><a href="#!">Other</a></li>
                  </ul>
         
          </nav>
    </header>
 
     <div class="container" id = "Show">
+        
+            <div id = "Fruits">
 
+            </div>
+            <div id = "Vegetables">
+
+            </div>
+            <div id = "Others">
+
+            </div>
         
     </div>
    
@@ -92,8 +101,10 @@
  </script>
 
  
- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+
  <script src="./ViewProducts.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="all_products_admin.js"></script>
   
 </body>
 </html>
