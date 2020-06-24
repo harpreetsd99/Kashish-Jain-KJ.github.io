@@ -9,43 +9,53 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!---Import detail.css-->
     <link rel="stylesheet" href="detail.css">
 </head>
 <body>
-
+    <header>
     <!--Navigation Bar Start-->
-    <nav class="nav-wrapper orange darken-1">
-        <div class="container">
-            <ul class="right">
-                <li>
-                    <!--Search field-->
-                    <form>
-                        <div class="input-field">
-                        <input id="search" type="search" required>
-                        <label class="label-icon" for="search"><i class="material-icons black-text">search</i></label>
-                        <i class="material-icons">close</i>
-                        </div>
-                    </form>
-                    <!--Search field ends-->
-                </li>
-                <li>
-                    <!--Filter Button with actions-->
-                    <form>
-                        <div class="input-field">
-                            <select id="select">
-                                <option value="0">None</option>
-                                <option value="1" id="LH">Low to high</option>
-                                <option value="2" id="HL">High to low</option>
-                            </select>
-                            <label></label>
-                        </div>
-                    </form>
-                    <!--Filter Button end-->
-                </li>
-            </ul>
+    <nav style="background-color: #1c2224;">
+        <div class="nav-wrapper container" id="navbar">
+
+            <a href="#" class="sidenav-trigger" data-target="slide_out"><i class="material-icons">menu</i></a></li></ul>
+		            <ul class="left hide-on-med-and-down">
+		        	    <li  class="menu active"><a href="./Dashboard.html">Dashboard</a></li>
+		        	    <li  class="menu active"><a href="./adminpost.html">Add Product</a></li>
+		        	    <li  class="menu active"><a href="./ViewProducts.html">View Product</a></li>
+                    </ul>
+
+            <!--Search field-->
+            <form id="search_form">
+                <span class="input-field" >
+                    <input id="search" type="search" required  >
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                </span>
+            </form>
+            <!--Search field ends-->
+    
+            <!--Filter Button with actions-->
+            <form>
+                <div class="input-field ">
+                    <select id="select">
+                        <option value="0" >None</option>
+                        <option value="1" id="LH">Low to high</option>
+                        <option value="2" id="HL">High to low</option>
+                    </select>
+                    <label></label>
+                </div>
+            </form>
+            <!--Filter Button end-->
+            
         </div>
     </nav>
+    <ul class="sidenav" id="slide_out">
+        <li  class="menu active"><a href="Dashboard.html">Dashboard</a></li>
+        <li  class="menu active"><a href="./adminpost.html">Add Product</a></li>
+        <li  class="menu active"><a href="./ViewProducts.html">View Product</a></li>
+    </ul>
+</header>
     <!--Navigation Bar End-->
 
     <!--Rest body start-->
