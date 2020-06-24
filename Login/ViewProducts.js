@@ -101,7 +101,7 @@ db.collection("Products").get().then(function(querySnapshot) {
                                 p6.appendChild(node6);
                             var a1 = document.createElement("a");
                             a1.setAttribute("style","margin-top:100px;");
-                            a1.setAttribute("href","#");
+                            a1.setAttribute("href","detail.html?product_name="+docum[i]);
                                 var at = document.createTextNode("View Buyers Details");
                                 
                                 a1.appendChild(at);

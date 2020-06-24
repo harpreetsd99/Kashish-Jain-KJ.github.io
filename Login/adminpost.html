@@ -502,11 +502,14 @@
   
               // print the image url  
                console.log(downloadURL); 
-			   var Pname = document.getElementById("product2").value;	
+			   var Pname = document.getElementById("product2").value;
+			   var x = Pname;
+			   x = x.replace(/\s/g,'');
+				
 								
     							
 
-								db.collection("Products").doc(Pname).set({
+								db.collection("Products").doc(x).set({
         							Product_Name: document.getElementById("product2").value,
         							Product_Category:  document.getElementById("select2").value,
         							Product_Discription: document.getElementById("textarea2").value,

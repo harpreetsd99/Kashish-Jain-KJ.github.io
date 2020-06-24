@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    
+    <title>Buyer Details</title>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!---Import detail.css-->
+    <link rel="stylesheet" href="detail.css">
+</head>
+<body>
+
+    <!--Navigation Bar Start-->
+    <nav class="nav-wrapper orange darken-1">
+        <div class="container">
+            <ul class="right">
+                <li>
+                    <!--Search field-->
+                    <form>
+                        <div class="input-field">
+                        <input id="search" type="search" required>
+                        <label class="label-icon" for="search"><i class="material-icons black-text">search</i></label>
+                        <i class="material-icons">close</i>
+                        </div>
+                    </form>
+                    <!--Search field ends-->
+                </li>
+                <li>
+                    <!--Filter Button with actions-->
+                    <form>
+                        <div class="input-field">
+                            <select id="select">
+                                <option value="0">None</option>
+                                <option value="1" id="LH">Low to high</option>
+                                <option value="2" id="HL">High to low</option>
+                            </select>
+                            <label></label>
+                        </div>
+                    </form>
+                    <!--Filter Button end-->
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--Navigation Bar End-->
+
+    <!--Rest body start-->
+    <div class="container">
+        <h3>Buyer Details</h3>
+        <!--CSS grid start-->
+        <div class="row">
+            <div class="col s12 l12" id="dynamic-card">
+            <ul class="no-bullets sortThis" id="detailList">
+                <!--Card for user information-->
+                
+                <!--Card end-->
+            </div>
+            </ul>
+        </div>
+        <!--CSS grid end-->
+    </div>
+    <!--Rest body end-->
+    
+    <!--Scripts-->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+
+	<script src="config.js"></script>
+	
+	<script src="buyers_detail.js"></script>
+    
+    
+    <!--jquery script-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!--list.js script-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+     <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".dropdown-trigger").dropdown();
+            $('select').formSelect();
+            $("select").change(function(){
+                var selectedValue = $(this).children("option:selected").val();
+                console.log(selectedValue);
+                if (selectedValue == 1){
+                   sort('ul.sortThis>li', 'span.price');
+                }
+                else if(selectedValue == 2){
+                    sortReverse('ul.sortThis>li', 'span.price');
+                }
+                //console.log($('.card .price').text());
+            });
+            $("#search").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $(".card").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                }); 
+            });
+            
+        });
+    </script> 
+
+</body>
+</html>

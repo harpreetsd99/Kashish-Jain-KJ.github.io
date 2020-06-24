@@ -71,25 +71,31 @@ $(window).on('resize', function() {
 // const db = firebase.firestore();
 var storageRef = firebase.storage().ref();
 function deletep(nam){
+	nam = nam.replace(/\s/g,'');
+	console.log(nam);
 	var docRef = db.collection("Products").doc(nam);
 
 	docRef.get().then(function(doc) {
 		 var desertRef = storageRef.child('images/'+ doc.data().Product_Img);
-
 		// // Delete the file
 		desertRef.delete().then(function() {
+			console.log(nam);
 			db.collection("Products").doc(nam).delete().then(function() {
 				console.log("Document successfully deleted!");
+				alert("Product Deleted");
+				window.location.reload();
 			}).catch(function(error) {
 				console.error("Error removing document: ", error);
 			});
-			alert("Product Deleted");
-			window.location.reload();
+			
+			
 		}).catch(function(error) {
 		// Uh-oh, an error occurred!
 		});
+		
 		// console.log(doc.data().Product_Img);
 }).catch(function(error) {
+
     console.log("Error getting document:", error);
 });
 		
@@ -103,6 +109,7 @@ function deletep(nam){
 
 
 function editp(nam){
+	nam = nam.replace(/\s/g,'');
 	localStorage.setItem("Productsss", nam);
 	console.log(localStorage.getItem("Productsss"));
 	window.location.href = "UpdateProduct.html";

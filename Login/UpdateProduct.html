@@ -60,7 +60,7 @@
 						      	</div>  
 						    </div>
 						</div>
-						<div class="input-field col s6 m9">
+						<div class="input-field col s12 m9">
 							<textarea id="textarea1" class="materialize-textarea"  required></textarea>
 							<label for="textarea1">Description</label>
 						</div>
@@ -189,7 +189,7 @@
 	</main>
 	<!---------------------------------------Preview-------------------------------------->
 	<div class="preview" style="display: none;">
-		<div class="form orange-text text-lightn-3">
+		<div class="form orange-text text-lightn-3 align-self-center">
 			<h3 class="title center">Preview<hr width="100px"></h3>
 			<div class="row">
 	   			<form class="col s12">
@@ -478,7 +478,7 @@
 										docRef.get().then(function(doc)	{
 											var image = doc.data().Product_Img;
 											var img_url = doc.data().Product_URL;
-											db.collection("Products").doc(Pname).set({
+											db.collection("Products").doc(Pname.replace(/\s/g,'')).set({
         								Product_Name: document.getElementById("product2").value,
         								Product_Category:  document.getElementById("select2").value,
         								Product_Discription: document.getElementById("textarea2").value,
@@ -511,7 +511,7 @@
         							alert("Error writing document: ");
 								
 									});
-									if(Pname != localStorage.getItem("Productsss")){
+									if(Pname.replace(/\s/g,'') != localStorage.getItem("Productsss")){
 										db.collection("Products").doc(localStorage.getItem("Productsss")).delete().then(function() {
     										console.log("Document successfully deleted!");
 										}).catch(function(error) {
@@ -578,7 +578,7 @@
   
 											});
 
-											db.collection("Products").doc(Pname).set({
+											db.collection("Products").doc(Pname.replace(/\s/g,'')).set({
         								Product_Name: document.getElementById("product2").value,
         								Product_Category:  document.getElementById("select2").value,
         								Product_Discription: document.getElementById("textarea2").value,
@@ -614,7 +614,7 @@
 									
 									
 			   
-										if(Pname != localStorage.getItem("Productsss"))
+										if(Pname.replace(/\s/g,'') != localStorage.getItem("Productsss"))
 												{
 
 										
