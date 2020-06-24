@@ -119,5 +119,5 @@ function editp(nam){
 	nam = nam.replace(/\s/g,'');
 	localStorage.setItem("Productsss", nam);
 	console.log(localStorage.getItem("Productsss"));
-	window.location.href = "UpdateProduct.html";
+	window.location.href = "UpdateProducts.html";
 }

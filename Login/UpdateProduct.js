@@ -57,7 +57,7 @@ docRef.get().then(function(doc) {
     console.log(element13);
     element13.setAttribute('selected',"selected");
     element15.setAttribute('value',doc.data().Product_Category);
-    // $('#select').val(doc.data().Product_Category);
+    //  $('#select').val(doc.data().Product_Category);
 
 
 
