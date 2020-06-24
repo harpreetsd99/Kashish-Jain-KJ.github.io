@@ -22,7 +22,7 @@ db.collection("Products").get().then(function(querySnapshot) {
         // var element = document.getElementById("Show");
         
         var box = document.createElement("div");
-        box.setAttribute("class", "col s12 m7 align-self-center");
+        box.setAttribute("class", "col s12 m7 ");
             // var box1 = document.createElement("div");
                 var card = document.createElement("div");
                 card.setAttribute("class", "card horizontal hoverable ");
@@ -42,18 +42,20 @@ db.collection("Products").get().then(function(querySnapshot) {
                     cardstack.setAttribute('class',"card-stacked");
                         var cardcontent = document.createElement("div");
                         cardcontent.setAttribute('class',"card-content");
+                        cardcontent.setAttribute('align',"justify");
                             var p1 = document.createElement("p");
-                            p1.setAttribute("class","flow-text indigo-text");
+                            p1.setAttribute("class","flow-text searchdata");
                             p1.setAttribute("style","margin-top:10px;");
                                 var b1 = document.createElement("b");
+                                b1.setAttribute("style","font-size: 40px;color: #ff8c00 !important;")
                                 var node1 = document.createTextNode(dict[docum[i]]["Product_Name"]);
                                     b1.appendChild(node1);
                                 p1.appendChild(b1);
                             var p2 = document.createElement("p");
-                            p2.setAttribute("class","flow-text ");
+                            p2.setAttribute("class","flow-text");
                             p2.setAttribute("style","margin-top:10px;");
                                 var span2 = document.createElement("span");
-                                span2.setAttribute("class"," indigo-text");
+                                span2.setAttribute("class"," subhead");
                                 var txt2 = document.createTextNode("Category: ");
                                 span2.appendChild(txt2);
                                 var node2 = document.createTextNode( dict[docum[i]]["Product_Category"]);
@@ -62,7 +64,7 @@ db.collection("Products").get().then(function(querySnapshot) {
                             var p3 = document.createElement("p");
                             p3.setAttribute("style","margin-top:10px;");
                                 var span3 = document.createElement("span");
-                                span3.setAttribute("class"," indigo-text");
+                                span3.setAttribute("class"," subhead");
                                 var txt3 = document.createTextNode("Description: ");
                                 span3.appendChild(txt3);
                                 p3.setAttribute("class","flow-text");
@@ -73,7 +75,7 @@ db.collection("Products").get().then(function(querySnapshot) {
                             p4.setAttribute("style","margin-top:10px;");
                                 p4.setAttribute("class","flow-text");
                                 var span4 = document.createElement("span");
-                                span4.setAttribute("class"," indigo-text");
+                                span4.setAttribute("class"," subhead");
                                 var txt4 = document.createTextNode("Quantity: ");
                                 span4.appendChild(txt4);
                                 var node4 = document.createTextNode(dict[docum[i]]["Product_Quantity"]);
@@ -81,8 +83,8 @@ db.collection("Products").get().then(function(querySnapshot) {
                                 p4.appendChild(node4);
                             var p5 = document.createElement("p");
                             p5.setAttribute("style","margin-top:10px;");
-                                var span5 = document.createElement("span5");
-                                span5.setAttribute("class"," indigo-text");
+                                var span5 = document.createElement("span");
+                                span5.setAttribute("class"," subhead");
                                 var txt5 = document.createTextNode("Unit: ");
                                 span5.appendChild(txt5);
                                 p5.setAttribute("class","flow-text");
@@ -92,8 +94,8 @@ db.collection("Products").get().then(function(querySnapshot) {
                             var p6 = document.createElement("p");
                             p6.setAttribute("style","margin-top:10px;");
                                 p6.setAttribute("class","flow-text");
-                                var span6 = document.createElement("span6");
-                                span6.setAttribute("class"," indigo-text");
+                                var span6 = document.createElement("span");
+                                span6.setAttribute("class"," subhead");
                                 var txt6 = document.createTextNode("Price: ");
                                 span6.appendChild(txt6);
                                 var node6 = document.createTextNode(dict[docum[i]]["Product_Price"]);

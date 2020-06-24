@@ -6626,6 +6626,7 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
 }
 
 .nav-wrapper .input-field input[type=search] {
+  background-color: #1c2224;
   height: inherit;
   padding-left: 4rem;
   width: calc(100% - 4rem);

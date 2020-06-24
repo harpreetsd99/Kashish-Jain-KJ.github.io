@@ -1,20 +1,29 @@
+html{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
 body{
   background-color: #fff !important;
+  font-style: 'Roboto';
 }
 
 #navbar{
 display: flex;
 justify-content: space-between;
+background-color: #1c2224;
 }
 
 .input-field{
 display: flex;
 flex-grow: 4;
+
 }
+
 
 #search_form{
   display: flex;
   flex-grow: 4;
+  
 }
 
 .responsive-img{
@@ -25,6 +34,8 @@ flex-grow: 4;
 
 .checkpointbar{
   margin:1%;
+  width: 12em;
+  height: 2em;
 }
 
 .container{
@@ -37,12 +48,24 @@ padding: 1%;
 }
 
 .card-image{
-padding: 1%;
-max-width: 300px;
-max-height: 300px;
+  margin: 2em;
+  max-width: 300px;
+  max-height: 300px;
+  text-align: center;
 }
 .card{
-  width:100%;
+  width: 100%;
+  font-size: 14px; 
+  overflow: hidden;
+}
+.subhead{
+
+  font-size: 28px;
+}
+
+.btn{
+  background-color: #ff8c00 !important;
+  color: white;
 }
 
 button{
@@ -53,5 +76,18 @@ button{
   margin-top:10px;
   
   }
-
+  @media only screen and (max-width: 768px) {
+    #name {
+      font-size: 30px;
+    }
+    .card{
+      font-size: 14px;
+    }
+    .subhead{
+      font-size: 20px;
+    }
+    .sidenav{
+      background-color: #f7f7f7;
+    }
+  }
 

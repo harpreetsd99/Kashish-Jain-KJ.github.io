@@ -47,14 +47,17 @@ for (var i = 0; i < dropdowns.length; i++){
 
 //Search Query
 $(document).ready(function(){
-  $("#search").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $(".card .flow-text.indigo-text *").filter(function() {
-    	console.log("Title value ",$(this).text());
-      $(this).parent().parent().parent().parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
+	$("#search").on("keyup", function() {
+	  var value = $(this).val().toLowerCase();
+	  console.log(value);
+	  $(".card .searchdata *").filter(function() {
+		  console.log("Title value ",$(this).text());
+		$(this).parent().parent().parent().parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
+	  });
+	});
   });
-});
+
+
 
 //card change on mobile
 $(window).on('resize', function() {
@@ -66,6 +69,10 @@ $(window).on('resize', function() {
     	$(".card").addClass("horizontal");
     }
 });
+
+//side-navbar trigger
+const slide_menu = document.querySelectorAll(".sidenav");
+M.Sidenav.init(slide_menu,{});
 
 
 // const db = firebase.firestore();
