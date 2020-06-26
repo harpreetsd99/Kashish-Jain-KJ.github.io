@@ -1,7 +1,7 @@
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   } else { 
-    
+    alert("Browser doesn't support.");
   }
 
 function showPosition(position) {
