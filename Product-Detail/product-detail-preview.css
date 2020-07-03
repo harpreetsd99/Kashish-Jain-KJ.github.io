@@ -50,6 +50,11 @@ main{
 	font-family: 'MuseoModerno', cursive;
 	font-size: 40px;
 }
+
+.title h1{
+	display:inline-block;	
+}
+
 hr{
 	width:600px;
 }
@@ -120,10 +125,10 @@ hr{
 	font-size: 14px;
 	margin:3px 0px;
 }
-#btn-sugg{
+.btn-sugg{
 	 border:1px solid #51aa1b;
 	 border-radius:20px;
-	 background-color: #fff;
+	 background-color:  #51aa1b
 	 color: #51aa1b;
 }
 .actual-price{
@@ -180,7 +185,7 @@ main{
 .off-label-sugg{
 	font-size: 11px;
 }
-#btn-sugg{
+.btn-sugg{
 	font-size: 11px;
 }
 }
@@ -211,7 +216,7 @@ main{
 .off-label-sugg{
 	font-size: 9px;
 }
-#btn-sugg{
+.btn-sugg{
 	font-size: 8px;
 }	
 }
