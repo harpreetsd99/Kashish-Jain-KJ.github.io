@@ -24,9 +24,6 @@ border-radius: 15px;
 background-color: rgba(255,255,255,0.97);
 }
 
-input {
-   z-index:1000; 
-}
  /* label color */
    .input-field label {
      color: #000;

@@ -25,16 +25,18 @@ $( document ).ready(function(){
       console.log(firstname,lastname,email,address,city,state,phoneNumber);
       
       users_db.doc(phoneNumber).set({
-        name : firstname+' ' + lastname,
-        address :  address+', '+city+', ' + state,
+        first_name : firstname,
+        last_name: lastname,
+        address :  address,
+        city:city,
+        state:state,
         email : email,
         admin: false,
         phone_no : phoneNumber
       })
       .then((resp) => {
-        console.log(resp)
-        localStorage.setItem("username", resp.name);
-        window.location.assign('./');
+        localStorage.setItem("phone", phoneNumber);
+        window.location.assign('./index_signin');
         
       })
       .catch(error => console.error(error))
@@ -90,8 +92,8 @@ function signInWithPhone(sentCodeId,phoneNumber) {
         .then((snapshot) => {
 
             if(snapshot.exists) {
-              localStorage.setItem("username", snapshot.data().name);
-              window.location.assign('./');
+              localStorage.setItem("phone", snapshot.data().phone_no);
+              window.location.assign('./index_signin.html');
 
             }
             else{
