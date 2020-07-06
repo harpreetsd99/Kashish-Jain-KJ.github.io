@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title></title>
+</head>
+<body style="background-color: #f7f7f7;">
+
+	<style type="text/css">
+		.loader
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: fixed;
+			z-index: 100;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;	
+		}
+	</style>
+
+	<div class="center loader">
+		<img src="{{choosePic}}" id="myPicture">
+	</div>
+
+	<script type="text/javascript">
+		window.onload = choosePic;
+		var myPix = new Array("orangeloader.gif","tomatoloader.gif","appleloader.gif","bananaloader.gif");
+
+		function choosePic()
+		{
+		     var randomNum = Math.floor(Math.random() * myPix.length);
+		     document.getElementById("myPicture").src = myPix[randomNum];
+		}
+	</script>
+
+
+</body>
+</html>
