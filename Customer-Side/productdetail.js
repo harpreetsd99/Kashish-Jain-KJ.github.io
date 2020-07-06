@@ -62,19 +62,76 @@ docRef.get().then(function(doc) {
 			    );
             }
             if(count==1){
+                // Laptop-------------------------------------------
                 $(".bullet1").css("left","100%");
                 $("#label-price1").css("left","95%");
                 $("#label-qty1").css("left","95%");
+                //L-Mobile-------------------------------------------
+                var mq = window.matchMedia( "(max-width: 425px)" );
+                if (mq.matches) {
+                   $(".bullet1").css("left","95%");
+                    $("#label-price1").css("left","92%");
+                    $("#label-qty1").css("left","92%"); 
+                }
+                //S-Mobile-------------------------------------------
+                var mq2 = window.matchMedia( "(max-width: 320px)" );
+                if (mq2.matches) {
+                   $(".bullet1").css("left","94%");
+                    $("#label-price1").css("left","92%");
+                    $("#label-qty1").css("left","92%"); 
+                }    
             }
             else if(count==2){
+                // Laptop------------------------------------------
                 $(".bullet1").css("left","50%");
                 $(".bullet2").css("left","95%");
                 $("#label-price1").css("left","46.5%");
                 $("#label-qty1").css("left","46.5%");
                 $("#label-price2").css("left","90%");
                 $("#label-qty2").css("left","91%");
+                // L-Mobile----------------------------------------
+                var mq = window.matchMedia( "(max-width: 425px)" );
+                if (mq.matches) {
+                    $(".bullet1").css("left","44%");
+                    $(".bullet2").css("left","87%");
+                    $("#label-price1").css("left","43%");
+                    $("#label-qty1").css("left","43%");
+                    $("#label-price2").css("left","85%");
+                    $("#label-qty2").css("left","87%"); 
+                }
+                //M-Mobile------------------------------------------
+                var mq1 = window.matchMedia( "(max-width: 375px)" );
+                if (mq1.matches) {
+                    $(".bullet1").css("left","43%");
+                    $(".bullet2").css("left","85%");
+                    $("#label-price1").css("left","42%");
+                    $("#label-qty1").css("left","42%");
+                    $("#label-price2").css("left","83%");
+                    $("#label-qty2").css("left","85%"); 
+                }
+                //S-Mobile------------------------------------------
+                var mq2 = window.matchMedia( "(max-width: 320px)" );
+                if (mq2.matches) {
+                    $(".bullet1").css("left","42%");
+                    $(".bullet2").css("left","83%");
+                    $("#label-price1").css("left","41%");
+                    $("#label-qty1").css("left","41%");
+                    $("#label-price2").css("left","81%");
+                    $("#label-qty2").css("left","83%"); 
+                }
+                // Tablets & Small laptop---------------------------------------------------------------------
+                var mq3 = window.matchMedia( "(min-device-width : 768px) and (max-device-width : 1024px)" );
+                if (mq3.matches) {
+                    $(".bullet1").css("left","45%");
+                    $(".bullet2").css("left","92%");
+                    $("#label-price1").css("left","45%");
+                    $("#label-qty1").css("left","45%");
+                    $("#label-price2").css("left","87%");
+                    $("#label-qty2").css("left","89%"); 
+                }
             }
             else if(count==3){
+                // Laptop------------------------------------------
                 $(".bullet1").css("left","33.33%");
                 $(".bullet2").css("left","61.66%");
                 $(".bullet3").css("left","89.99%");
@@ -84,8 +141,74 @@ docRef.get().then(function(doc) {
                 $("#label-qty2").css("left","59.66%");
                 $("#label-price3").css("left","85.99%");
                 $("#label-qty3").css("left","87.99%");
-            }
+                // L-Mobile-----------------------------------------
+                var mq = window.matchMedia( "(max-width: 425px)" );
+                if (mq.matches) {
+                    $(".bullet1").css("left","26%");
+                    $(".bullet2").css("left","52%");
+                    $(".bullet3").css("left","79%");
+                    $("#label-price1").css("left","27%");
+                    $("#label-qty1").css("left","27%");
+                    $("#label-price2").css("left","52%");
+                    $("#label-qty2").css("left","54%");
+                    $("#label-price3").css("left","78%");
+                    $("#label-qty3").css("left","81%"); 
+                }
+                //M-Mobile--------------------------------------------
+                var mq1 = window.matchMedia( "(max-width: 375px)" );
+                if (mq1.matches) {
+                    $(".bullet1").css("left","25%");
+                    $(".bullet2").css("left","50%");
+                    $(".bullet3").css("left","76%");
+                    $("#label-price1").css("left","26%");
+                    $("#label-qty1").css("left","26%");
+                    $("#label-price2").css("left","50%");
+                    $("#label-qty2").css("left","52%");
+                    $("#label-price3").css("left","75.5%");
+                    $("#label-qty3").css("left","79%"); 
+                }
+                //S-Mobile-------------------------------------------
+                var mq2 = window.matchMedia( "(max-width: 320px)" );
+                if (mq2.matches) {
+                    $(".bullet1").css("left","24%");
+                    $(".bullet2").css("left","49%");
+                    $(".bullet3").css("left","73%");
+                    $("#label-price1").css("left","24%");
+                    $("#label-qty1").css("left","24%");
+                    $("#label-price2").css("left","49%");
+                    $("#label-qty2").css("left","52%");
+                    $("#label-price3").css("left","73.5%");
+                    $("#label-qty3").css("left","77%"); 
+                }
+                // Tablets------------------------------------------------------------------------------------
+                var mq3 = window.matchMedia( "(min-device-width : 768px) and (max-device-width : 1020px)" );
+                if (mq3.matches) {
+                    $(".bullet1").css("left","27%");
+                    $(".bullet2").css("left","57%");
+                    $(".bullet3").css("left","82%");
+                    $("#label-price1").css("left","27%");
+                    $("#label-qty1").css("left","27%");
+                    $("#label-price2").css("left","57%");
+                    $("#label-qty2").css("left","60%");
+                    $("#label-price3").css("left","83%");
+                    $("#label-qty3").css("left","87%"); 
+                }
+                // S-Laptops---------------------------------------------------------------------------------
+                var mq4 = window.matchMedia( "(min-device-width : 1024px) and (max-device-width : 1350px)" );
+                if (mq4.matches) {
+                    $(".bullet1").css("left","29%");
+                    $(".bullet2").css("left","58%");
+                    $(".bullet3").css("left","87%");
+                    $("#label-price1").css("left","25%");
+                    $("#label-qty1").css("left","25%");
+                    $("#label-price2").css("left","54%");
+                    $("#label-qty2").css("left","55%");
+                    $("#label-price3").css("left","82%");
+                    $("#label-qty3").css("left","85%"); 
+                }
+            } 
             else if(count==4){
+                // Laptop--------------------------------------------
                 $(".bullet1").css("left","25%");
                 $(".bullet2").css("left","45%");
                 $(".bullet3").css("left","65%");
@@ -98,8 +221,89 @@ docRef.get().then(function(doc) {
                 $("#label-qty3").css("left","64%");
                 $("#label-price4").css("left","80.6%");
                 $("#label-qty4").css("left","84%");
-            }
+                // Large-Mob-----------------------------------------
+                var mq = window.matchMedia( "(max-width: 425px)" );
+                if (mq.matches) {
+                   $(".bullet1").css("left","17%");
+                    $(".bullet2").css("left","34%");
+                    $(".bullet3").css("left","52%");
+                    $(".bullet4").css("left","71%");
+                    $("#label-price1").css("left","17%");
+                    $("#label-qty1").css("left","17%");
+                    $("#label-price2").css("left","35%");
+                    $("#label-qty2").css("left","37%");
+                    $("#label-price3").css("left","53%");
+                    $("#label-qty3").css("left","57%");
+                    $("#label-price4").css("left","70%");
+                    $("#label-qty4").css("left","75%");
+                }
+                // med-Mob-------------------------------------------
+                var mq2 = window.matchMedia( "(max-width: 375px)" );
+                if (mq2.matches) {
+                   $(".bullet1").css("left","16%");
+                    $(".bullet2").css("left","32%");
+                    $(".bullet3").css("left","50%");
+                    $(".bullet4").css("left","65.5%");
+                    $("#label-price1").css("left","16%");
+                    $("#label-qty1").css("left","16%");
+                    $("#label-price2").css("left","34%");
+                    $("#label-qty2").css("left","36%");
+                    $("#label-price3").css("left","52%");
+                    $("#label-qty3").css("left","56%");
+                    $("#label-price4").css("left","68%");
+                    $("#label-qty4").css("left","74%");
+                }
+                // small-mob----------------------------------------
+                var mq3 = window.matchMedia( "(max-width: 320px)" );
+                if (mq3.matches) {
+                   $(".bullet1").css("left","15%");
+                    $(".bullet2").css("left","30%");
+                    $(".bullet3").css("left","47%");
+                    $(".bullet4").css("left","62%");
+                    $("#label-price1").css("left","16%");
+                    $("#label-qty1").css("left","16%");
+                    $("#label-price2").css("left","33%");
+                    $("#label-qty2").css("left","35%");
+                    $("#label-price3").css("left","51%");
+                    $("#label-qty3").css("left","55%");
+                    $("#label-price4").css("left","65%");
+                    $("#label-qty4").css("left","71%");
+                }
+                // tablets-------------------------------------------------------------------------------------
+                var mq4 = window.matchMedia( "(min-device-width : 768px) and (max-device-width : 1023px)" );
+                if (mq4.matches) {
+                    $(".bullet1").css("left","19%");
+                    $(".bullet2").css("left","38%");
+                    $(".bullet3").css("left","56%");
+                    $(".bullet4").css("left","73%");
+                    $("#label-price1").css("left","19%");
+                    $("#label-qty1").css("left","19%");
+                    $("#label-price2").css("left","40%");
+                    $("#label-qty2").css("left","43%");
+                    $("#label-price3").css("left","58%");
+                    $("#label-qty3").css("left","62%");
+                    $("#label-price4").css("left","72%");
+                    $("#label-qty4").css("left","78%");
+                }
+                // Small Laptops------------------------------------------------------------------------------
+                var mq4 = window.matchMedia( "(min-device-width : 1024px) and (max-device-width : 1350px)" );
+                if (mq4.matches) {
+                   $(".bullet1").css("left","20%");
+                    $(".bullet2").css("left","40%");
+                    $(".bullet3").css("left","60%");
+                    $(".bullet4").css("left","80%");
+                    $("#label-price1").css("left","16%");
+                    $("#label-qty1").css("left","16%");
+                    $("#label-price2").css("left","35%");
+                    $("#label-qty2").css("left","37%");
+                    $("#label-price3").css("left","56%");
+                    $("#label-qty3").css("left","59%");
+                    $("#label-price4").css("left","76%");
+                    $("#label-qty4").css("left","80%");
+                }
+            }        
             else if(count==5){
+                // Laptop-------------------------------------------
                 $(".bullet1").css("left","20%");
                 $(".bullet2").css("left","35%");
                 $(".bullet3").css("left","50%");
@@ -115,9 +319,105 @@ docRef.get().then(function(doc) {
                 $("#label-qty4").css("left","65%");
                 $("#label-price5").css("left","77%");
                 $("#label-qty5").css("left","81%");
+                // Large-Mob-----------------------------------------
+                var mq = window.matchMedia( "(max-width: 425px)" );
+                if (mq.matches) {
+                    $(".bullet1").css("left","13%");
+                    $(".bullet2").css("left","26%");
+                    $(".bullet3").css("left","38%");
+                    $(".bullet4").css("left","51%");
+                    $(".bullet5").css("left","63%");
+                    $("#label-price1").css("left","13%");
+                    $("#label-qty1").css("left","13%");
+                    $("#label-price2").css("left","27%");
+                    $("#label-qty2").css("left","29%");
+                    $("#label-price3").css("left","40%");
+                    $("#label-qty3").css("left","43%");
+                    $("#label-price4").css("left","54%");
+                    $("#label-qty4").css("left","59%");
+                    $("#label-price5").css("left","66%");
+                    $("#label-qty5").css("left","72%");
+                }
+                // med-Mob-------------------------------------------
+                var mq2 = window.matchMedia( "(max-width: 375px)" );
+                if (mq2.matches) {
+                    $(".bullet1").css("left","12%");
+                    $(".bullet2").css("left","24%");
+                    $(".bullet3").css("left","35%");
+                    $(".bullet4").css("left","47%");
+                    $(".bullet5").css("left","56%");
+                    $("#label-price1").css("left","12%");
+                    $("#label-qty1").css("left","12%");
+                    $("#label-price2").css("left","24%");
+                    $("#label-qty2").css("left","26%");
+                    $("#label-price3").css("left","36%");
+                    $("#label-qty3").css("left","40%");
+                    $("#label-price4").css("left","49%");
+                    $("#label-qty4").css("left","55%");
+                    $("#label-price5").css("left","60%");
+                    $("#label-qty5").css("left","67%");
+                }
+                // small-mob----------------------------------------
+                var mq3 = window.matchMedia( "(max-width: 320px)" );
+                if (mq3.matches) {
+                    $(".bullet1").css("left","10%");
+                    $(".bullet2").css("left","21%");
+                    $(".bullet3").css("left","32%");
+                    $(".bullet4").css("left","43%");
+                    $(".bullet5").css("left","52%");
+                    $("#label-price1").css("left","10%");
+                    $("#label-qty1").css("left","10%");
+                    $("#label-price2").css("left","22%");
+                    $("#label-qty2").css("left","25%");
+                    $("#label-price3").css("left","33%");
+                    $("#label-qty3").css("left","38%");
+                    $("#label-price4").css("left","46%");
+                    $("#label-qty4").css("left","53%");
+                    $("#label-price5").css("left","56%");
+                    $("#label-qty5").css("left","64%");
+                }
+                // tablets-------------------------------------------------------------------------------------
+                var mq4 = window.matchMedia( "(min-device-width : 768px) and (max-device-width : 1020px)" );
+                if (mq4.matches) {
+                    $(".bullet1").css("left","13%");
+                    $(".bullet2").css("left","26%");
+                    $(".bullet3").css("left","39%");
+                    $(".bullet4").css("left","51%");
+                    $(".bullet5").css("left","63%");
+                    $("#label-price1").css("left","14%");
+                    $("#label-qty1").css("left","14%");
+                    $("#label-price2").css("left","27%");
+                    $("#label-qty2").css("left","30%");
+                    $("#label-price3").css("left","41%");
+                    $("#label-qty3").css("left","45%");
+                    $("#label-price4").css("left","52%");
+                    $("#label-qty4").css("left","59%");
+                    $("#label-price5").css("left","64%");
+                    $("#label-qty5").css("left","71%");
+                }
+                // Small Laptops------------------------------------------------------------------------------
+                var mq5 = window.matchMedia( "(min-device-width : 1024px) and (max-device-width : 1350px)" );
+                if (mq5.matches) {
+                    $(".bullet1").css("left","15%");
+                    $(".bullet2").css("left","30%");
+                    $(".bullet3").css("left","45%");
+                    $(".bullet4").css("left","59%");
+                    $(".bullet5").css("left","74%");
+                    $("#label-price1").css("left","12%");
+                    $("#label-qty1").css("left","12%");
+                    $("#label-price2").css("left","27%");
+                    $("#label-qty2").css("left","28%");
+                    $("#label-price3").css("left","42%");
+                    $("#label-qty3").css("left","45%");
+                    $("#label-price4").css("left","56%");
+                    $("#label-qty4").css("left","60%");
+                    $("#label-price5").css("left","69%");
+                    $("#label-qty5").css("left","74%");
+                }
             }
         }else{
             $("#checkpoint-details").hide();
+            $("#no-check").hide();
         }
         
 
