@@ -83,7 +83,7 @@ hr{
 }
 #progress-bar{
 margin-left:16px;
-margin-right: 1px;
+margin-right: 0px;
 }
 .bull{
 	border: 2px solid #ff8c00;

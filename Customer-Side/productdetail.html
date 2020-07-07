@@ -97,9 +97,10 @@
 						</div>
 					</div>
 					<div class="row">
-						<span class="left">No. Of Units Sold:&emsp;550 Units</span>
+						<span class="left">No. Of Units Sold:&emsp;<span id="soll"></span></span>
 						<span id="no-check" class="right hide-on-med-and-down">No. Of Checkpoints:&emsp;<span id="numcheckpoint"></span>
 					</div>
+					
 					<div id="checkpoint-details" class="row">
 						<div id="checkpoint" class="center">
 							<span style="font-size:18px;color: #26a69a;" id="checkpoint-content" style="display: none;">Check Points</span><br><br>
@@ -112,20 +113,20 @@
 							</div>
 						</div><br><br>
 						<div id="progress-bar" class="progress">
-	      					<div class="determinate" style="background-color: #ff8c00; width: 100%;"></div>
+	      					<div class="determinate" id="bar" style="background-color: #ff8c00; width: 0%;"></div>
 	  					</div>
 	  					<div id="qty-checkpoint" class="row">
-	  						<sub class="left">
+	  						<!-- <sub class="left">
 	  							<label>QTY</label>
-	  						</sub>
+	  						</sub> -->
 	  						<!-- <sup id="label-qty">
 	  							<label>500</label>
 	  						</sup> -->
 	  					</div>
 	  					<div class="row" id="price-checkpoint">
-							<sub class="left">
+							<!-- <sub class="left">
 								<label>(&nbsp;&#8377;&nbsp;)</label>
-							</sub>
+							</sub> -->
 							<!-- <sup  id="label-price">
 								<label>25&#8377;</label>
 							</sup> -->
