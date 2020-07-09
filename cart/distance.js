@@ -1,6 +1,7 @@
 
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
+    alert("kuch to hone chahiye...");
 } 
 else{
     alert("not supported");
@@ -12,6 +13,7 @@ function showPosition(position) {
   var Longitude =  position.coords.longitude;
   alert("Latitude: "+Latitude);
   alert("Longitude: "+Longitude);
+  
 }
 
 
