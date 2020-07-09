@@ -19,14 +19,19 @@
 			   	<a href="#" id="logo" class="brand-logo orange-text">FROOD</a>
 			   	 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			   	<ul id="nav-mobile" class="right hide-on-med-and-down">
-			   		<li><a href="signin.html">Login/Sign-Up</a></li>
+             <li id="login" ><a href="signin.html">Login/Sign-Up</a></li>
+             <li id="my_profile"><a href="my_profile.html">My Profile</a></li>
+            <li id="signOut"><a>Sign-Out</a></li>
+    
 			     </ul>
 		    </div>
 		</nav>
 	</div>
 
     <ul class="sidenav" id="mobile-demo">
-		<li><a href="signin.html">Login/Sign-Up</a></li>
+    <li id="login-mob"><a href="signin.html">Login/Sign-Up</a></li>
+    <li id="my_profile_mob"><a href="my_profile.html">My Profile</a></li>
+    <li id="signOut_mob"><a>Sign-Out</a></li>
     </ul>
     <!--Navigation end-->
 
@@ -39,7 +44,7 @@
             <h5 class="header col s12 light">One stop place for healthy fruits and vegetables!</h5>
           </div>
           <div class="row center">
-            <a href="#shop" id="" class="btn-large waves-effect waves-light orange">Shop Now</a>
+            <a href="./Second_page.html?Category=Others" id="" class="btn-large waves-effect waves-light orange">Shop Now</a>
           </div>
           <br><br>
     
@@ -100,7 +105,7 @@
                             </div>
                             <div class="card-content">
                               <span class="card-title activator grey-text text-darken-4">Fruits<i class="material-icons right">more_vert</i></span>
-                              <p><a href="#">Shop Now</a></p>
+                              <p><a href="./Second_page.html?Category=Fruits">Shop Now</a></p>
                             </div>
                             <div class="card-reveal">
                               <span class="card-title grey-text text-darken-4">Fruits<i class="material-icons right">close</i></span>
@@ -118,7 +123,7 @@
                             </div>
                             <div class="card-content">
                             <span class="card-title activator grey-text text-darken-4">Vegetables<i class="material-icons right">more_vert</i></span>
-                            <p><a href="#">Shop Now</a></p>
+                            <p><a href="./Second_page.html?Category=Veggies">Shop Now</a></p>
                             </div>
                             <div class="card-reveal">
                             <span class="card-title grey-text text-darken-4">Vegetable<i class="material-icons right">close</i></span>
@@ -136,7 +141,7 @@
                             </div>
                             <div class="card-content">
                             <span class="card-title activator grey-text text-darken-4">Others<i class="material-icons right">more_vert</i></span>
-                            <p><a href="#">Shop Now</a></p>
+                            <p><a href="./Second_page.html?Category=Others">Shop Now</a></p>
                             </div>
                             <div class="card-reveal">
                             <span class="card-title grey-text text-darken-4">Others<i class="material-icons right">close</i></span>
@@ -237,7 +242,7 @@
                 	<h5 class="white-text">Your Section</h5>
                 	<ul>
 		                <li><a class="grey-text text-lighten-3" href="#!">Your Wallet</a></li>
-                  		<li><a class="grey-text text-lighten-3" href="#!">Your Profile</a></li>
+                  		<li><a class="grey-text text-lighten-3" href="my_profile.html">Your Profile</a></li>
 		                <li><a class="grey-text text-lighten-3" href="#!">Your Orders</a></li>
 		                <li><a class="grey-text text-lighten-3" href="#!">Your Account</a></li>
                 	</ul>
@@ -253,9 +258,18 @@
     </footer>
     <!--end-->
 
-    <!--Scripts-->
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+
+    <!--Scripts firebase-->
+    <script src="config.js"></script>
     <!--Location script-->
-    <script type="text/javascript" src="location.js"></script>
+   
     <!--jquery script-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
@@ -263,10 +277,62 @@
 
     <script>
         $(document).ready(function(){
-            $('.sidenav').sidenav();
-            $('.slider').slider();
+                $('.sidenav').sidenav();
+                $('.slider').slider();
+            
+            firebase.auth().onAuthStateChanged(function(user) {
+              if (user) {
+                $('#login').hide();
+                $('#login-mob').hide();
+                $('#my_profile').show();
+                $('#signOut').show();
+                $('#my_profile_mob').show();
+                $('#signOut_mob').show();
+              } else {
+                // No user is signed in.
+                console.log("not signed in");
+                $('#login').show();
+                $('#login-mob').show();
+                $('#my_profile_mob').hide();
+                $('#my_profile').hide();
+                $('#signOut_mob').hide();
+                $('#signOut').hide();
+              }
+            });
+            $('#signOut').click(()=> {
+              firebase.auth().signOut()
+              .then(() => {
+                console.log('Signed Out');
+                localStorage.removeItem('phone');
+                window.location.assign('./index.html');
+              })
+              .catch(e=>{
+              console.error('Sign Out Error', e);
+              });
+            });
+            $('#signOut_mob').click(()=> {
+              firebase.auth().signOut()
+              .then(() => {
+                console.log('Signed Out');
+                localStorage.removeItem('phone');
+                window.location.assign('./index.html');
+              })
+              .catch(e=>{
+              console.error('Sign Out Error', e);
+              });
+            });
         });
-       
+        $( document).ready(function(){
+          firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+              console.log("log in hai");
+            } else {
+              console.log("log out hai");
+            }
+          });
+        });
     </script>
+     <!-- <script type="text/javascript" src="location.js"></script> -->
+      <!-- <script type="text/javascript" src="index.js"></script> -->
 </body>
 </html>

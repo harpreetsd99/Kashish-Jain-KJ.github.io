@@ -12,10 +12,18 @@ var state = stateRef.options[stateRef.selectedIndex];
 
 const db = firebase.firestore();
 const users_db = db.collection('users');
+var user = firebase.auth().currentUser;
+if (user) {
 
-const phone_no = localStorage.getItem('phone');
+  console.log("log in hai");
+
+  // User is signed in.
+} else {
+    console.log("log out hai.");
+}
 
 function onLoad() {
+    const phone_no = localStorage.getItem('phone');
 
     users_db.doc(phone_no).get()
     .then(snapshot => {
@@ -44,7 +52,15 @@ function onLoad() {
 
 $(document).ready(function(){
     var phone_no = localStorage.getItem('phone');
-
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (!user) {
+            // No user is signed in.
+            console.log("not signed in");
+              window.location.assign('./signin.html');
+          
+        } else {
+      
+        
     $("#edit-btn").click(function(){
         $("#edit-btn").hide();
         $("#submit-btn").show();
@@ -70,13 +86,16 @@ $(document).ready(function(){
         var lname = $('#lname');
         var textarea1 = $('#textarea1');
         var email = $('#email');
+        var phone = $('#mob');
         var city = $("#city option:selected");
         var state = $("#state option:selected");
 
         users_db.doc(phone_no).set({
             first_name : fname.val(),
             last_name : lname.val(),
+            admin: false,
             email : email.val(),
+            phone_no : phone.val(),
             address: textarea1.val(),
             city : city.text(),
             state: state.text()
@@ -84,4 +103,6 @@ $(document).ready(function(){
         .then(() => console.log('updated info'))
         .catch(err => console.error(err))
     })
+}
+});
 });

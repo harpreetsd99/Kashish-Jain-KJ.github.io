@@ -36,7 +36,7 @@ $( document ).ready(function(){
       })
       .then((resp) => {
         localStorage.setItem("phone", phoneNumber);
-        window.location.assign('./index_signin');
+        window.location.assign('./index.html');
         
       })
       .catch(error => console.error(error))
@@ -92,8 +92,8 @@ function signInWithPhone(sentCodeId,phoneNumber) {
         .then((snapshot) => {
 
             if(snapshot.exists) {
-              localStorage.setItem("phone", snapshot.data().phone_no);
-              window.location.assign('./index_signin.html');
+              localStorage.setItem("phone", phoneNumber);
+              window.location.assign('./index.html');
 
             }
             else{

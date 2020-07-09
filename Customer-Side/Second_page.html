@@ -13,27 +13,32 @@
 <body>
 
 	<!-- Navbar -->
-	<nav>
-		<div class="navbar-fixed">
-		 	<nav class="navbar">
-			    <div class="nav-wrapper">
-			    	<a href="#" id="logo" class="brand-logo orange-text col m2">FROOD</a>
-    		    	<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-			    <form class="right hide-on-small-only" id="search_form">
+	<div class="navbar-fixed">
+		<nav class="navbar">
+			<div class="nav-wrapper">
+			   	<a href="#" id="logo" class="brand-logo orange-text">FROOD</a>
+			   	 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			   	<ul id="nav-mobile" class="right hide-on-med-and-down">
+			   		<li><a href="./my_profile.html">My Profile</a></li>
+                    <li><a onclick="Logout()">Sign Out</a></li>
+			     </ul>
+			     <form class="right hide-on-small-only" id="search_form">
 			        <span class="input-field">
 			          <input id="search" type="search" required >
 			          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
 			        </span>
 			    </form>
-			    	<ul id="nav-mobile" class="right hide-on-med-and-down">
-			    		<li><a href="#"><i class="large material-icons">home</i></a></li>
-			        	<li><a href="#"><i class="large material-icons">shopping_cart</i></a></li>
-			        </ul>
-			    </div>
-			</nav>
-		</div>
-	</nav>
+		    </div>
+		</nav>
+	</div>
 
+    <ul class="sidenav" id="mobile-demo">
+		<li><a href="./my_profile.html">My Profile</a></li>
+		<li><a onclick="Logout()">Sign Out</a></li>
+    </ul>
+    <!--Navigation end-->
+
+    	<!-- Navbar -->
 	<nav class="nav2 hide-on-med-and-up" style="background-color: #1c2224;">
 		<form id="search_form">
 		    <span class="input-field">
@@ -42,13 +47,6 @@
 		    </span>
 		</form>
 	</nav>
-	<ul class="sidenav" id="mobile-demo">
-		<li><a class="orange-text" href="#">Home<i class="material-icons orange-text">home</i></a></li>
-		<li><a class="orange-text" href="#">Your Cart<i class="material-icons orange-text">shopping_cart</i></a></li>
-		<li><a class="orange-text" href="#">Your Orders<i class="material-icons orange-text">receipt</i></a></li>
-		<li><a class="orange-text" href="#">Your Wallet<i class="material-icons orange-text">payment</i></a></li>
-	</ul>
-
 
 	<!-- Category -->
 	<div class="categoryname"><p><h1 id="Catname"></h1></p></div>
