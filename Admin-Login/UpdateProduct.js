@@ -52,12 +52,9 @@ docRef.get().then(function(doc) {
     console.log(doc.data().Product_Category);
 
   
-    var element13 = document.getElementById( doc.data().Product_Category);
-    var element15 = document.getElementById( 'select');
-    console.log(element13);
-    element13.setAttribute('selected',"selected");
-    element15.setAttribute('value',doc.data().Product_Category);
-    //  $('#select').val(doc.data().Product_Category);
+    var element13 = doc.data().Product_Category;
+    $(".select-wrapper input.select-dropdown").html(element13);
+    $('.select-dropdown li.disabled').attr("value",element13).html(element13).css({"padding":"14px 16px","font-size":"16px"});
 
 
 
@@ -69,6 +66,16 @@ docRef.get().then(function(doc) {
 
     var element12 = document.getElementById("img");
     element12.setAttribute("src",doc.data().Product_URL);
+
+    var element13 = document.getElementById("end-date");
+    element13.setAttribute("value",doc.data().End_Date);
+
+    var value_checkbox = doc.data().Checkbox_Show;
+    if( value_checkbox == 1){
+        $("#checkbox-show").prop("checked", true);
+    }else{
+        $("#checkbox-show").prop("checked", false);
+    }
 
     var object1 = document.getElementById("qty-req2");
     object1.setAttribute("value",doc.data().CheckPointQuantity2);

@@ -48,10 +48,14 @@ background-color: #ffffff;
 font-family: 'MuseoModerno', cursive;
 font-size: 30px;
 padding-bottom: 40px;
-
-
 }
 
+.cp{
+	display:inline-block;
+    text-align:right;
+    padding:0;
+    margin:0;
+}
 .title h1{
 	display:inline-block;
 	
